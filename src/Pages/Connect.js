@@ -80,6 +80,8 @@ const Connect = () => {
   //////////////////////////////////////////////////////////////////
 
   ///////////////refresh on navigating back from Score screen///////////////
+  const [render, setRender] = useState(false);
+
   useEffect(() => {
     // dispatch(fetchData());
     setRandWord(random());
@@ -99,7 +101,7 @@ const Connect = () => {
     setWrong4(0);
     setWrong5(0);
     setNoRepeat([]);
-  }, []);
+  }, [render]);
 
   //////////////////////////////////////////////
 
@@ -488,6 +490,7 @@ const Connect = () => {
           <div
             className="col-start-11 col-span-1 bg-pink-500 m-3 rounded-xl flex justify-center items-center hover:cursor-pointer"
             onClick={() => {
+              setRender(!render);
               const sentData = [
                 { question_id: word_Pic[0]?._id, attempts: wrong0 },
                 { question_id: word_Pic[1]?._id, attempts: wrong1 },
