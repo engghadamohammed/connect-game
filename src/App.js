@@ -1,4 +1,3 @@
-import "./App.css";
 import Connect from "./Pages/Connect";
 
 function App() {
